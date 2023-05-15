@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://2rvwj4llp06f"]
+
+[ext_resource type="Texture2D" uid="uid://dj5h44kpbfpvh" path="res://icon.svg" id="1_8nhnx"]
+[ext_resource type="Script" path="res://Ropetest.gd" id="2_r12yd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5vdb"]
+
+[node name="World" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_8nhnx")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_r12yd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_k5vdb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
